@@ -1,5 +1,5 @@
 {
-  "name": "res-app",
+  "name": "futaNextTemplate v.1.0",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,6 +16,8 @@
     "postcss": "8.4.28",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-jss": "^10.10.0",
+    "styled-components": "^6.0.7",
     "tailwindcss": "3.3.3"
   }
 }

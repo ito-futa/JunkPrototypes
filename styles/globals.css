@@ -1,27 +1,94 @@
+/* フォント「Kaisei Opti」のインポート font-family: 'Kaisei Opti', serif;  */
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap");
+/* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body {
+  background: #fff;
+  font-family: "Kaisei Opti";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* デスクトップ向けのスタイル */
+@media (min-width: 768px) {
+  /* 壁紙のスタイル */
+  .fixed-background {
+    position: fixed; /* 固定ポジション */
+    top: 0; /* 上端から0px */
+    left: 0; /* 左端から0px */
+    z-index: -1; /* コンテンツの背面に表示 */
+
+    width: 100%; /* 画面全体の幅 */
+    height: 100%; /* 画面全体の高さ */
+
+    background-image: url("https://img.freepik.com/free-photo/pink-pastel-background_53876-92975.jpg?w=1800&t=st=1693416683~exp=1693417283~hmac=ae5b15b9066a8f7e64d50ac864c9b8ab02935ef51167dfdfef6e8a1a06e68c8f"); /* 壁紙の画像 */
+    /*background-color: rgba(255, 255, 255, 0.5); /* 背景色を半透明に */
+    /*backdrop-filter: blur(50px); /* ブラーを10pxで適用 */
+    background-size: cover; /* 画面にフィットさせる */
+    background-position: center; /* 画像を中央に配置 */
+    background-attachment: fixed; /* スクロールに追従しない */
+  }
+
+  /* コンテンツを中央に配置するための親要素 */
+  .content-wrapper {
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; /* 横方向に中央寄せ */
+    min-height: 100vh; /* 最低でもビューポートの高さを持つ */
+    z-index: 1; /* 壁紙より前面に表示 */
+  }
+
+  /* コンテンツのスタイル */
+  .content {
+    z-index: 1; /* 壁紙より前面に表示 */
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8); /* 背景色（少し透明） */
+    width: 480px; /* 幅を固定 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 6px 20px rgba(0, 0, 0, 0.1);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.content > * {
+  padding: 16px;
+}
+
+header {
+  background: cornflowerblue;
+  height: 56px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+header div {
+  text-align: right;
+}
+
+nav {
+  background: palegoldenrod;
+}
+
+main {
+  background: seashell;
+}
+
+section h2 {
+  font-weight: bold;
+  border: ;
+}
+
+footer {
+  background: slategray;
+}
+
+.copyright {
+  color: #fff;
+  background: navy;
+  text-align: center;
+  padding: 8px;
+
+  height: 500px;
 }
