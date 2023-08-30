@@ -22,7 +22,7 @@ body {
     width: 100%; /* 画面全体の幅 */
     height: 100%; /* 画面全体の高さ */
 
-    background-image: url("https://img.freepik.com/free-photo/pink-pastel-background_53876-92975.jpg?w=1800&t=st=1693416683~exp=1693417283~hmac=ae5b15b9066a8f7e64d50ac864c9b8ab02935ef51167dfdfef6e8a1a06e68c8f"); /* 壁紙の画像 */
+    background-image: url("/image/pattern.jpg"); /* 壁紙の画像 */
     /*background-color: rgba(255, 255, 255, 0.5); /* 背景色を半透明に */
     /*backdrop-filter: blur(50px); /* ブラーを10pxで適用 */
     background-size: cover; /* 画面にフィットさせる */
