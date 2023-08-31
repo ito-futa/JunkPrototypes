@@ -1,10 +1,40 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image'
 import Link from 'next/link';
 import styled from 'styled-components';
 
 export default function Home() {
+
+  // メニューの開閉を制御するisMenuOpenをuseStateで設定
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // toggleMenuを実行時にisMenuOpenの状態を切り替える
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  // ウインドウの横幅に応じてisMenuOpenを設定
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {  // PCの場合（768px以上）
+        setIsMenuOpen(true); // 初期段階ではメニューを開く
+      } else {  // モバイルの場合
+        setIsMenuOpen(false); // 初期段階ではメニューを閉じる
+      }
+    };
+
+    // 初期ロード時に一回だけチェック
+    handleResize();
+
+    // ウィンドウリサイズ時にもチェック
+    window.addEventListener('resize', handleResize);
+
+    // クリーンアップ
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -21,12 +51,13 @@ export default function Home() {
           {/* ヘッダー */}
           <header>
             <h1>サイトタイトル</h1>
-            {/* タイトルスタイルを適用 */}
-            <div>メニューボタン（仮）</div>
+            {/* メニューボタンをクリックすると開く */}
+            <button onClick={toggleMenu} className="menuBtn">メニューボタン（仮）</button>
           </header>
 
           {/* グローバルナビゲーションメニュー */}
-          <nav className="gnavi">
+          <nav className={isMenuOpen ? "gnavi" : "none"}>
+            <button onClick={toggleMenu} className='closeBtn'>メニューを閉じる</button>
             <div>サイトメニュー</div>
             <ul>
               {/* 内部リンク */}
@@ -45,7 +76,14 @@ export default function Home() {
           {/* メイン */}
           <main>
             メインコンテンツ
-            {/* コンテナスタイルを適用 */}
+            <Image
+              src="/image/futa.jpg" // 画像のパス（必須）
+              alt="Description" // 代替テキスト（必須）
+              width={500} // 画像の幅（必須）
+              height={300} // 画像の高さ（必須）
+              quality={90} // 画像の品質（1-100）
+            />
+
             <div className="bg-blue-500 text-white p-4 rounded w-[100px]">
               ボタン
             </div>

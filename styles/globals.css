@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.none {
+  display: none;
+}
+
 body {
   background: #fff;
   font-family: "Kaisei Opti";
@@ -18,16 +22,49 @@ body {
     top: 0; /* 上端から0px */
     left: 0; /* 左端から0px */
     z-index: -1; /* コンテンツの背面に表示 */
-
     width: 100%; /* 画面全体の幅 */
     height: 100%; /* 画面全体の高さ */
-
-    background-image: url("/image/pattern.jpg"); /* 壁紙の画像 */
+    background-image: url("/image/mimoza.png"); /* 壁紙の画像 */
     /*background-color: rgba(255, 255, 255, 0.5); /* 背景色を半透明に */
     /*backdrop-filter: blur(50px); /* ブラーを10pxで適用 */
     background-size: cover; /* 画面にフィットさせる */
     background-position: center; /* 画像を中央に配置 */
     background-attachment: fixed; /* スクロールに追従しない */
+  }
+
+  /* サイトタイトルのPC要表示 */
+   {
+    position: fixed;
+    font-size: 64px;
+    top: 40px;
+    left: 640px;
+  }
+
+  /* メニューのPC用表示 */
+  .gnavi {
+    position: fixed;
+    width: 200px;
+    padding: 16px;
+    top: 50px; /* 上からの距離 */
+    left: 680px; /* 右からの距離 */
+    background-color: rgba(100, 149, 237, 0.5);
+    border-radius: 8px;
+  }
+
+  .gnavi div {
+    font-size: 20px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+
+  .gnavi li {
+    margin-bottom: 16px;
+  }
+
+  .menuBtn,
+  .closeBtn {
+    display: none;
   }
 
   /* コンテンツを中央に配置するための親要素 */
@@ -41,19 +78,19 @@ body {
   /* コンテンツのスタイル */
   .content {
     z-index: 1; /* 壁紙より前面に表示 */
+    width: 400px; /* 幅を固定 */
+    left: 160px;
     position: absolute;
-    background: rgba(255, 255, 255, 0.8); /* 背景色（少し透明） */
-    width: 480px; /* 幅を固定 */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 6px 20px rgba(0, 0, 0, 0.1);
   }
 }
 
-.content > * {
+/*.content > * {
   padding: 16px;
-}
+}*/
 
 header {
-  background: cornflowerblue;
+  background: #fff;
   height: 56px;
   display: grid;
   align-items: center;
@@ -68,7 +105,20 @@ header div {
 }
 
 nav {
-  background: palegoldenrod;
+  background-color: rgba(255, 255, 255, 0.8); /* 白色の背景を半透明に */
+}
+
+@media (max-width: 768px) {
+  .gnavi {
+    position: fixed; /* 固定位置 */
+    top: 0; /* 上端 */
+    left: 0; /* 左端 */
+    width: 100%; /* 画面全体の幅 */
+    height: 100%; /* 画面全体の高さ */
+    background-color: #333;
+    z-index: 2; /* 高いz-indexで前面に */
+    color: #fff;
+  }
 }
 
 main {
@@ -77,11 +127,15 @@ main {
 
 section h2 {
   font-weight: bold;
-  border: ;
+  border-bottom: 1px solid #000;
 }
 
 footer {
   background: slategray;
+}
+
+footer p {
+  padding-bottom: 16px;
 }
 
 .copyright {
