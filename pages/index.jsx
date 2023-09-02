@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image'
 import Link from 'next/link';
 import styled from 'styled-components';
-import { AiFillPhone, AiOutlineExclamationCircle } from "react-icons/ai";
+import { AiOutlineTwitter, AiFillInstagram, AiFillFacebook } from "react-icons/ai";
 
 export default function Home() {
 
@@ -19,9 +19,9 @@ export default function Home() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {  // PCの場合（768px以上）
-        setIsMenuOpen(true); // 初期段階ではメニューを開く
+        setIsMenuOpen(false); // 初期段階ではメニューを開く
       } else {  // モバイルの場合
-        setIsMenuOpen(false); // 初期段階ではメニューを閉じる
+        setIsMenuOpen(true); // 初期段階ではメニューを閉じる
       }
     };
 
@@ -53,12 +53,11 @@ export default function Home() {
           <header>
             <h1>サイトタイトル</h1>
             {/* メニューボタンをクリックすると開く */}
-            <button onClick={toggleMenu} className="menuBtn">メニューボタン（仮）</button>
+            <button className={isMenuOpen ? "menuBtn" : "menuBtn menuCloseBtn"} onClick={toggleMenu}>{isMenuOpen ? "Menu" : "Close"}</button>
           </header>
 
           {/* グローバルナビゲーションメニュー */}
-          <nav className="gnavi" style={{ display: isMenuOpen ? "block" : "none" }}>
-            <button onClick={toggleMenu} className='closeBtn'>メニューを閉じる</button>
+          <nav className="gnavi" style={{ display: isMenuOpen ? "none" : "block" }}>
             <div>サイトメニュー</div>
             <ul>
               {/* 内部リンク */}
@@ -102,8 +101,8 @@ export default function Home() {
               <h2>セクション3</h2>
               <p>本文</p>
             </section>
-            <AiFillPhone />
-            <AiOutlineExclamationCircle />
+
+
           </main>
 
           {/* フッター */}
@@ -113,6 +112,11 @@ export default function Home() {
             <p>プライバシーポリシー</p>
             <p>特定商取引法に基づく表記</p>
             {/* コンテナスタイルを適用 */}
+            <div className='socialLinkIcon'>
+              <a href=""><AiOutlineTwitter /></a>
+              <a href=""><AiFillInstagram /></a>
+              <a href=""><AiFillFacebook /></a>
+            </div>
           </footer>
 
           <div className="copyright">
@@ -120,7 +124,7 @@ export default function Home() {
           </div>
 
         </div>
-      </div>
+      </div >
     </>
   );
 };
