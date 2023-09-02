@@ -72,7 +72,7 @@ body {
 
     /* 線のみを表示するために背景を透明に */
     background-color: transparent;
-
+    /* 下線をつける */
     border-bottom: 1px solid #333;
   }
 
