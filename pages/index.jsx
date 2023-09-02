@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image'
 import Link from 'next/link';
 import styled from 'styled-components';
+import { AiFillPhone, AiOutlineExclamationCircle } from "react-icons/ai";
 
 export default function Home() {
 
@@ -56,7 +57,7 @@ export default function Home() {
           </header>
 
           {/* グローバルナビゲーションメニュー */}
-          <nav className={isMenuOpen ? "gnavi" : "none"}>
+          <nav className="gnavi" style={{ display: isMenuOpen ? "block" : "none" }}>
             <button onClick={toggleMenu} className='closeBtn'>メニューを閉じる</button>
             <div>サイトメニュー</div>
             <ul>
@@ -82,14 +83,27 @@ export default function Home() {
               width={500} // 画像の幅（必須）
               height={300} // 画像の高さ（必須）
               quality={90} // 画像の品質（1-100）
+              objectFit="cover" // 画像のオブジェクトフィット（'fill', 'contain', 'cover', 'none', 'scale-down'）
+              layout="responsive"
             />
 
             <div className="bg-blue-500 text-white p-4 rounded w-[100px]">
               ボタン
             </div>
-            <section><h2>セクション1</h2></section>
-            <section><h2>セクション2</h2></section>
-            <section><h2>セクション3</h2></section>
+            <section>
+              <h2>セクション1</h2>
+              <p>本文</p>
+            </section>
+            <section>
+              <h2>セクション2</h2>
+              <p>本文</p>
+            </section>
+            <section>
+              <h2>セクション3</h2>
+              <p>本文</p>
+            </section>
+            <AiFillPhone />
+            <AiOutlineExclamationCircle />
           </main>
 
           {/* フッター */}

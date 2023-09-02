@@ -5,13 +5,33 @@
 @tailwind components;
 @tailwind utilities;
 
-.none {
-  display: none;
+/* グローバルな色の変数 */
+:root {
+  /* 主要色（Primary colors） */
+  --primary: #007bff; /* プライマリー色（例: ボタン、リンク） */
+  --secondary: #666; /* セカンダリー色（例: 補助情報） */
+
+  /* 状態色（Status colors） */
+  --success: #28a745; /* 成功色（例: 成功メッセージ） */
+  --warning: #ffc107; /* 警告色（例: 警告メッセージ） */
+  --danger: #dc3545; /* 危険色（例: エラーメッセージ） */
+
+  /* テキストと背景 */
+  --text-primary: #333; /* 主要テキスト色 */
+  --text-secondary: #fff; /* 補助テキスト色 */
+  --background-primary: #fff; /* 主要背景色 */
+  --background-secondary: #fff2e8; /* 補助背景色 */
 }
 
 body {
-  background: #fff;
+  background: var(--primary);
+  color: var(--text-primary);
   font-family: "Kaisei Opti";
+}
+
+a:hover {
+  /* 下線をつける */
+  border-bottom: 1px solid #333;
 }
 
 /* デスクトップ向けのスタイル */
@@ -60,20 +80,6 @@ body {
 
   .gnavi li {
     margin-bottom: 16px;
-  }
-
-  .gnavi li :hover {
-    /* 文字自体を透明に */
-    color: transparent;
-
-    /* 文字の線（アウトライン）を設定 */
-    -webkit-text-stroke: 1px black; /* Webkitブラウザ用 */
-    text-stroke: 1px black; /* その他のブラウザ（まだ広くサポートされていない） */
-
-    /* 線のみを表示するために背景を透明に */
-    background-color: transparent;
-    /* 下線をつける */
-    border-bottom: 1px solid #333;
   }
 
   .menuBtn,
