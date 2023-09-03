@@ -37,6 +37,14 @@ export default function Home() {
     };
   }, []);
 
+  // スマホの場合、メニューを閉じる処理
+  const closeMenu = () => {
+    // スマホモードであれば、メニューを閉じる
+    if (window.innerWidth <= 768) {
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <>
       <div className="fixed-background"></div>
@@ -61,10 +69,10 @@ export default function Home() {
             <div>MENU</div>
             <ul>
               {/* 内部リンク */}
-              <li><a href="./#店舗紹介">店舗紹介</a></li>
-              <li><a href="./#サービス一覧" >サービス一覧</a></li>
-              <li><a href="./#スタッフ紹介" >スタッフ紹介</a></li>
-              <li><a href="./#お知らせ" >お知らせ</a></li>
+              <li><a onClick={closeMenu} href="./#店舗紹介" >店舗紹介</a></li>
+              <li><a onClick={closeMenu} href="./#サービス一覧" >サービス一覧</a></li>
+              <li><a onClick={closeMenu} href="./#スタッフ紹介" >スタッフ紹介</a></li>
+              <li><a onClick={closeMenu} href="./#お知らせ" >お知らせ</a></li>
               <li><Link href="./" >メニュー５</Link></li>
               {/* 外部リンク：新しいタブで開く&"noopener noreferrer" */}
               <li><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">メニュー6</a></li>
@@ -77,7 +85,7 @@ export default function Home() {
           <main>
             <Image
               src="/image/futa.jpg" // 画像のパス（必須）
-              alt="Description" // 代替テキスト（必須）
+              alt="description" // 代替テキスト（必須）
               width={500} // 画像の幅（必須）
               height={300} // 画像の高さ（必須）
               quality={90} // 画像の品質（1-100）
