@@ -39,9 +39,10 @@ a:hover {
   border-bottom: 1px solid #333;
 }
 
-/* デスクトップ向けのスタイル */
-@media (min-width: 768px) {
-  /* 壁紙のスタイル */
+/* 壁紙のスタイル */
+
+/* PCとタブレットのスタイル */
+@media (width > 768px) {
   .fixed-background {
     position: fixed; /* 固定ポジション */
     top: 0; /* 上端から0px */
@@ -50,15 +51,16 @@ a:hover {
     width: 100%; /* 画面全体の幅 */
     height: 100%; /* 画面全体の高さ */
     background-image: url("/image/cat.jpg"); /* 壁紙の画像 */
-    /*background-color: rgba(255, 255, 255, 0.5); /* 背景色を半透明に */
-    backdrop-filter: blur(100px);
     background-size: cover; /* 画面にフィットさせる */
     background-position: center; /* 画像を中央に配置 */
     background-attachment: fixed; /* スクロールに追従しない */
     /* アニメーション設定 */
     animation: onLoadAnimation 0.5s ease-out;
   }
+}
 
+/* PCとタブレットのスタイル */
+@media (width > 768px) {
   /* ロード時のアニメーション */
   @keyframes onLoadAnimation {
     0% {
@@ -68,17 +70,40 @@ a:hover {
       transform: scale(1); /* 通常の大きさに戻る */
     }
   }
+}
 
-  header {
-    height: 0px !important;
+/* PCとタブレットのスタイル */
+@media (width > 768px) {
+  /* コンテンツを中央に配置するための親要素 */
+  .content-wrapper {
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; /* 横方向に中央寄せ */
+    min-height: 100vh; /* 最低でもビューポートの高さを持つ */
+    z-index: 1; /* 壁紙より前面に表示 */
   }
 
-  /* サイトタイトルのPC要表示 */
-   {
-    position: fixed;
-    font-size: 64px;
-    top: 40px;
-    left: 640px;
+  /* コンテンツのスタイル */
+  .content {
+    z-index: 1; /* 壁紙より前面に表示 */
+    width: 400px; /* 幅を固定 */
+    position: absolute;
+    border-left: 4px solid var(--primary);
+    border-right: 4px solid var(--primary);
+  }
+}
+
+/* タブレットのスタイル */
+@media (width > 768px) and (width < 1024px) {
+  /* コンテンツを右に配置するための親要素 */
+  .content-wrapper {
+    justify-content: right; /* 右寄せ */
+  }
+}
+
+/* デスクトップ向けのスタイル */
+@media (width > 768px) {
+  header {
+    height: 0px !important;
   }
 
   /* メニューのPC用表示 */
@@ -109,23 +134,6 @@ a:hover {
   .closeBtn {
     display: none;
   }
-
-  /* コンテンツを中央に配置するための親要素 */
-  .content-wrapper {
-    display: flex; /* フレックスボックスを使用 */
-    justify-content: center; /* 横方向に中央寄せ */
-    min-height: 100vh; /* 最低でもビューポートの高さを持つ */
-    z-index: 1; /* 壁紙より前面に表示 */
-  }
-
-  /* コンテンツのスタイル */
-  .content {
-    z-index: 1; /* 壁紙より前面に表示 */
-    width: 400px; /* 幅を固定 */
-    position: absolute;
-    border-left: 4px solid var(--primary);
-    border-right: 4px solid var(--primary);
-  }
 }
 
 /*.content > * {
@@ -151,6 +159,7 @@ header h1 {
   font-weight: 900;
 }
 
+/* デスクトップ向けのスタイル */
 @media (width > 768px) {
   header h1 {
     font-size: 28px;
@@ -164,7 +173,8 @@ nav {
   background-color: rgba(255, 255, 255, 0.8); /* 白色の背景を半透明に */
 }
 
-@media (max-width: 768px) {
+/* スマホ向けのスタイル */
+@media (width < 768px) {
   .gnavi {
     position: fixed; /* 固定位置 */
     top: 0; /* 上端 */
@@ -219,7 +229,8 @@ footer p {
   background: #fff;
 }
 
-@media (min-width: 768px) {
+/* デスクトップ向けのスタイル */
+@media (width > 768px) {
   .socialLinkIcon {
     position: fixed;
     left: 160px;
