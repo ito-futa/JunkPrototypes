@@ -69,15 +69,15 @@ export default function Home() {
             <div>MENU</div>
             <ul>
               {/* 内部リンク */}
+              <li><a onClick={closeMenu} href="./#" >TOPへ</a></li>
               <li><a onClick={closeMenu} href="./#店舗紹介" >店舗紹介</a></li>
               <li><a onClick={closeMenu} href="./#サービス一覧" >サービス一覧</a></li>
               <li><a onClick={closeMenu} href="./#スタッフ紹介" >スタッフ紹介</a></li>
               <li><a onClick={closeMenu} href="./#お知らせ" >お知らせ</a></li>
+              <li><a onClick={closeMenu} href="./#会社情報" >会社情報</a></li>
               <li><Link href="./" >メニュー５</Link></li>
               {/* 外部リンク：新しいタブで開く&"noopener noreferrer" */}
               <li><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">メニュー6</a></li>
-              <li><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">メニュー7</a></li>
-              <li><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">メニュー8</a></li>
             </ul>
           </nav>
 
@@ -127,7 +127,7 @@ export default function Home() {
 
           {/* フッター */}
           <footer>
-            <h2>運営会社について</h2>
+            <h2 id="会社情報">会社情報</h2>
             <p>住所</p>
             <p>営業時間</p>
             <p>定休日</p>
