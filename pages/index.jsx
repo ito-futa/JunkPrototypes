@@ -85,19 +85,20 @@ export default function Home() {
               layout="responsive"
             />
 
-            <div className="bg-blue-500 text-white p-4 rounded w-[100px]">
-              ボタン
-            </div>
             <section>
-              <h2>セクション1</h2>
+              <h2>店舗紹介</h2>
               <p>本文</p>
             </section>
             <section>
-              <h2>セクション2</h2>
+              <h2>サービス一覧</h2>
               <p>本文</p>
             </section>
             <section>
-              <h2>セクション3</h2>
+              <h2>スタッフ紹介</h2>
+              <p>本文</p>
+            </section>
+            <section>
+              <h2>お知らせ</h2>
               <p>本文</p>
             </section>
 

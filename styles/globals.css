@@ -117,17 +117,20 @@ a:hover {
     border-radius: 24px;
     text-align: center;
     border: 2px solid var(--primary);
+    color: var(--primary);
   }
 
   .gnavi div {
+    font-weight: 700;
     font-size: 20px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--primary);
     padding-bottom: 16px;
     margin-bottom: 16px;
   }
 
   .gnavi li {
     margin-bottom: 16px;
+    opacity: 0.75;
   }
 
   .menuBtn,
@@ -189,11 +192,6 @@ nav {
 
 main {
   background: seashell;
-}
-
-section h2 {
-  font-weight: bold;
-  border-bottom: 1px solid #000;
 }
 
 footer {
@@ -268,3 +266,17 @@ footer p {
 .googleMap iframe {
   border-radius: 8px;
 }
+
+/* セクション関連 */
+
+section {
+  text-align: center;
+  padding: 32px;
+}
+
+section h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* セクション関連---ここまで */
