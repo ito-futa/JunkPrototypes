@@ -24,7 +24,7 @@
 }
 
 body {
-  background: var(--primary);
+  background: var(--background-primary);
   color: var(--text-primary);
   font-family: "Kaisei Opti";
 }
@@ -161,7 +161,7 @@ section h2 {
 }
 
 footer {
-  background: slategray;
+  background: var(--background-primary);
 }
 
 footer p {
@@ -192,7 +192,7 @@ footer p {
 
 .socialLinkIcon {
   display: flex;
-  font-size: 40px;
+  font-size: 28px;
   position: fixed;
   left: 10%;
   bottom: 200px;
@@ -200,4 +200,20 @@ footer p {
 
 .socialLinkIcon > * {
   padding: 8px;
+  margin: 8px;
+  background-color: #666;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.socialLinkIcon > *:hover {
+  background-color: #fff;
+  color: #666;
+  border-bottom: none;
+}
+
+.googleMap {
+  display: grid;
+  justify-items: center;
+  padding: 12px;
 }

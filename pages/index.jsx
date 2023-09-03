@@ -107,10 +107,20 @@ export default function Home() {
 
           {/* フッター */}
           <footer>
-            <p>会社情報</p>
-            <p>利用規約</p>
-            <p>プライバシーポリシー</p>
-            <p>特定商取引法に基づく表記</p>
+            <h2>運営会社について</h2>
+            <p>住所</p>
+            <p>営業時間</p>
+            <p>定休日</p>
+            <div className="googleMap">
+              <iframe
+                // GoogleMapの埋め込み住所URL
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12962.672164346553!2d139.7527995!3d35.685175!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c0d02d8064d%3A0xd11a5f0b379e6db7!2z55qH5bGF!5e0!3m2!1sja!2sjp!4v1693725610955!5m2!1sja!2sjp"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                width="100%"
+                height="240px"
+              ></iframe>
+            </div>
             {/* コンテナスタイルを適用 */}
             <div className='socialLinkIcon'>
               <a href=""><AiOutlineTwitter /></a>
