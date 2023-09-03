@@ -27,6 +27,11 @@
   --font-com: "Noto Sans JP", sans-serif;
 }
 
+/* スムーズスクロールを全体に適用 */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background-primary);
   color: var(--text-primary);
@@ -36,7 +41,9 @@ body {
 
 a:hover {
   /* 下線をつける */
-  border-bottom: 1px solid #333;
+  border-bottom: 2px solid;
+  font-weight: 800;
+  opacity: 1 !important;
 }
 
 /* 壁紙のスタイル */
@@ -275,8 +282,10 @@ section {
 }
 
 section h2 {
+  display: inline-block;
   font-size: 24px;
   font-weight: bold;
+  border-bottom: 2px solid var(--primary);
 }
 
 /* セクション関連---ここまで */

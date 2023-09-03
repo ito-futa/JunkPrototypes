@@ -61,10 +61,10 @@ export default function Home() {
             <div>MENU</div>
             <ul>
               {/* 内部リンク */}
-              <li><Link href="./" >メニュー１</Link></li>
-              <li><Link href="./" >メニュー２</Link></li>
-              <li><Link href="./" >メニュー３</Link></li>
-              <li><Link href="./" >メニュー４</Link></li>
+              <li><a href="./#店舗紹介">店舗紹介</a></li>
+              <li><a href="./#サービス一覧" >サービス一覧</a></li>
+              <li><a href="./#スタッフ紹介" >スタッフ紹介</a></li>
+              <li><a href="./#お知らせ" >お知らせ</a></li>
               <li><Link href="./" >メニュー５</Link></li>
               {/* 外部リンク：新しいタブで開く&"noopener noreferrer" */}
               <li><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">メニュー6</a></li>
@@ -86,19 +86,31 @@ export default function Home() {
             />
 
             <section>
-              <h2>店舗紹介</h2>
+              <h2 id="店舗紹介">店舗紹介</h2>
               <p>本文</p>
             </section>
             <section>
-              <h2>サービス一覧</h2>
+              <h2 id="サービス一覧">サービス一覧</h2>
               <p>本文</p>
             </section>
             <section>
-              <h2>スタッフ紹介</h2>
+              <h2 id="スタッフ紹介">スタッフ紹介</h2>
               <p>本文</p>
             </section>
             <section>
-              <h2>お知らせ</h2>
+              <h2 id="お知らせ">お知らせ</h2>
+              <p>本文</p>
+              <p>本文</p>
+              <p>本文</p>
+              <p>本文</p>
+              <p>本文</p>
+              <p>本文</p>
+              <p>本文</p>
+              <p>本文</p>
+              <p>本文</p>
+              <p>本文</p>
+              <p>本文</p>
+              <p>本文</p>
               <p>本文</p>
             </section>
 
