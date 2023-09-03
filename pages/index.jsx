@@ -75,7 +75,6 @@ export default function Home() {
 
           {/* メイン */}
           <main>
-            メインコンテンツ
             <Image
               src="/image/futa.jpg" // 画像のパス（必須）
               alt="Description" // 代替テキスト（必須）
@@ -122,10 +121,10 @@ export default function Home() {
               ></iframe>
             </div>
             {/* コンテナスタイルを適用 */}
-            <div className='socialLinkIcon'>
-              <a href=""><AiOutlineTwitter /></a>
-              <a href=""><AiFillInstagram /></a>
-              <a href=""><AiFillFacebook /></a>
+            <div className="socialLinkIcon">
+              <a href="https://twitter.com/"><AiOutlineTwitter /></a>
+              <a href="https://www.instagram.com/"><AiFillInstagram /></a>
+              <a href="https://www.facebook.com/"><AiFillFacebook /></a>
             </div>
           </footer>
 

@@ -44,12 +44,24 @@ a:hover {
     z-index: -1; /* コンテンツの背面に表示 */
     width: 100%; /* 画面全体の幅 */
     height: 100%; /* 画面全体の高さ */
-    background-image: url("/image/mimoza.png"); /* 壁紙の画像 */
+    background-image: url("/image/cat.jpg"); /* 壁紙の画像 */
     /*background-color: rgba(255, 255, 255, 0.5); /* 背景色を半透明に */
-    /*backdrop-filter: blur(50px); /* ブラーを10pxで適用 */
+    backdrop-filter: blur(100px);
     background-size: cover; /* 画面にフィットさせる */
     background-position: center; /* 画像を中央に配置 */
     background-attachment: fixed; /* スクロールに追従しない */
+    /* アニメーション設定 */
+    animation: onLoadAnimation 0.5s ease-out;
+  }
+
+  /* ロード時のアニメーション */
+  @keyframes onLoadAnimation {
+    0% {
+      transform: scale(1.2); /* 初期状態では1.2倍の大きさ */
+    }
+    100% {
+      transform: scale(1); /* 通常の大きさに戻る */
+    }
   }
 
   header {
@@ -128,10 +140,15 @@ header div {
 }
 
 header h1 {
-  left: 140px;
-  top: 240px;
-  position: fixed;
-  font-size: 28px;
+}
+
+@media (width > 768px) {
+  header h1 {
+    font-size: 28px;
+    left: 140px;
+    top: 240px;
+    position: fixed;
+  }
 }
 
 nav {
@@ -145,9 +162,11 @@ nav {
     left: 0; /* 左端 */
     width: 100%; /* 画面全体の幅 */
     height: 100%; /* 画面全体の高さ */
-    background-color: #333;
+    background: #333;
     z-index: 2; /* 高いz-indexで前面に */
     color: #fff;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    visibility: visible;
   }
 }
 
@@ -177,12 +196,15 @@ footer p {
 
 .menuBtn {
   position: fixed;
-  right: 12px;
+  right: 16px;
+  top: 16px;
   z-index: 9999;
   color: #fff;
-  border-radius: 6%;
+  border-radius: 50%;
   background: #666;
   padding: 8px 14px;
+  width: 70px;
+  height: 70px;
 }
 
 .menuCloseBtn {
@@ -190,12 +212,18 @@ footer p {
   background: #fff;
 }
 
+@media (min-width: 768px) {
+  .socialLinkIcon {
+    position: fixed;
+    left: 10%;
+    bottom: 200px;
+  }
+}
+
 .socialLinkIcon {
   display: flex;
   font-size: 28px;
-  position: fixed;
-  left: 10%;
-  bottom: 200px;
+  justify-content: center;
 }
 
 .socialLinkIcon > * {
@@ -216,4 +244,9 @@ footer p {
   display: grid;
   justify-items: center;
   padding: 12px;
+  border-radius: 8px;
+}
+
+.googleMap iframe {
+  border-radius: 8px;
 }
