@@ -19,9 +19,9 @@ export default function Home() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {  // PCの場合（768px以上）
-        setIsMenuOpen(false); // 初期段階ではメニューを開く
+        setIsMenuOpen(true); // 初期段階ではメニューを開く
       } else {  // モバイルの場合
-        setIsMenuOpen(true); // 初期段階ではメニューを閉じる
+        setIsMenuOpen(false); // 初期段階ではメニューを閉じる
       }
     };
 
@@ -46,19 +46,19 @@ export default function Home() {
           {/* SEO対策のためのmetaタグ */}
           <Head>
             <title>サイトタイトル</title>
-            <meta name="Description" content="サイト説明文" />
+            <meta name="description" content="サイト説明文" />
           </Head>
 
           {/* ヘッダー */}
           <header>
             <h1>サイトタイトル</h1>
             {/* メニューボタンをクリックすると開く */}
-            <button className={isMenuOpen ? "menuBtn" : "menuBtn menuCloseBtn"} onClick={toggleMenu}>{isMenuOpen ? "Menu" : "Close"}</button>
+            <button className={isMenuOpen ? "menuBtn menuCloseBtn" : "menuBtn"} onClick={toggleMenu}>{isMenuOpen ? "Close" : "Menu"}</button>
           </header>
 
           {/* グローバルナビゲーションメニュー */}
-          <nav className="gnavi" style={{ display: isMenuOpen ? "none" : "block" }}>
-            <div>サイトメニュー</div>
+          <nav className="gnavi" style={{ display: isMenuOpen ? "block" : "none" }}>
+            <div>MENU</div>
             <ul>
               {/* 内部リンク */}
               <li><Link href="./" >メニュー１</Link></li>
