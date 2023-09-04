@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link';
 import styled from 'styled-components';
 import { AiOutlineTwitter, AiFillInstagram, AiFillFacebook } from "react-icons/ai";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXTwitter, faLine } from '@fortawesome/free-brands-svg-icons';
 
 export default function Home() {
 
@@ -146,6 +148,8 @@ export default function Home() {
               <a href="https://twitter.com/"><AiOutlineTwitter /></a>
               <a href="https://www.instagram.com/"><AiFillInstagram /></a>
               <a href="https://www.facebook.com/"><AiFillFacebook /></a>
+              <a href="https://twitter.com/" className="snsIconAdjustment"><FontAwesomeIcon icon={faXTwitter} /></a>
+              <a href="https://line.me/ja/" className="snsIconAdjustment"><FontAwesomeIcon icon={faLine} /></a>
             </div>
           </footer>
 

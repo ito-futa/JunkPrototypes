@@ -217,10 +217,10 @@ main {
 
 footer {
   background: var(--background-primary);
-}
 
-footer p {
-  padding-bottom: 16px;
+  && p {
+    padding-bottom: 16px;
+  }
 }
 
 .copyright {
@@ -253,7 +253,7 @@ footer p {
   .socialLinkIcon {
     position: fixed;
     left: 160px;
-    bottom: 200px;
+    top: 700px;
   }
 }
 
@@ -262,21 +262,29 @@ footer p {
 .socialLinkIcon {
   display: flex;
   font-size: 28px;
-  justify-content: center;
-}
 
-.socialLinkIcon > * {
-  padding: 8px;
-  margin: 8px;
-  background-color: #666;
-  color: #fff;
-  border-radius: 50%;
-}
+  && > * {
+    padding: 8px;
+    margin: 8px;
+    background-color: #666;
+    color: #fff;
+    border-radius: 50%;
+  }
 
-.socialLinkIcon > *:hover {
-  background-color: #fff;
-  color: #666;
-  border-bottom: none;
+  && > *:hover {
+    background-color: #fff;
+    color: #666;
+    border-bottom: none;
+  }
+
+  && .snsIconAdjustment {
+    height: 44px;
+    width: 44px;
+    text-align: center;
+    && * {
+      padding-bottom: 8px;
+    }
+  }
 }
 
 /* ソーシャル系リンク関連---ここまで */
@@ -288,10 +296,9 @@ footer p {
   justify-items: center;
   padding: 12px;
   border-radius: 8px;
-}
-
-.googleMap iframe {
-  border-radius: 8px;
+  && iframe {
+    border-radius: 8px;
+  }
 }
 
 /* GoogleMap関連---ここまで */
@@ -301,14 +308,14 @@ footer p {
 section {
   text-align: center;
   padding: 32px;
-}
 
-section h2 {
-  display: inline-block;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 16px;
-  border-bottom: 2px solid var(--primary);
+  && h2 {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--primary);
+  }
 }
 
 /* セクション関連---ここまで */
