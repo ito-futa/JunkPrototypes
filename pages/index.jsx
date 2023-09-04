@@ -120,8 +120,6 @@ export default function Home() {
               <p>本文</p>
               <p>本文</p>
               <p>本文</p>
-              <p>本文</p>
-              <p>本文</p>
             </section>
 
 
