@@ -218,7 +218,7 @@ main {
 footer {
   background: var(--background-primary);
 
-  && p {
+  & p {
     padding-bottom: 16px;
   }
 }
@@ -263,7 +263,7 @@ footer {
   display: flex;
   font-size: 28px;
 
-  && > * {
+  & > * {
     padding: 8px;
     margin: 8px;
     background-color: #666;
@@ -271,17 +271,17 @@ footer {
     border-radius: 50%;
   }
 
-  && > *:hover {
+  & > *:hover {
     background-color: #fff;
     color: #666;
     border-bottom: none;
   }
 
-  && .snsIconAdjustment {
+  & .snsIconAdjustment {
     height: 44px;
     width: 44px;
     text-align: center;
-    && * {
+    & * {
       padding-bottom: 8px;
     }
   }
@@ -296,7 +296,7 @@ footer {
   justify-items: center;
   padding: 12px;
   border-radius: 8px;
-  && iframe {
+  & iframe {
     border-radius: 8px;
   }
 }
@@ -309,7 +309,7 @@ section {
   text-align: center;
   padding: 32px;
 
-  && h2 {
+  & h2 {
     display: inline-block;
     font-size: 24px;
     font-weight: bold;
@@ -319,3 +319,25 @@ section {
 }
 
 /* セクション関連---ここまで */
+
+
+  /* スクロールアニメーションの設定----ここから */
+
+.animationElement {
+  /* スクロールアニメーションの設定 */
+  animation: reveal-image linear both; /* アニメーションを指定。イージングはlinear。animation-fill-modeはboth */
+  animation-timeline: view();
+  animation-range: contain 0% contain 50%; /* 開始: 要素がビューポートに完全に入った時、終了: ビューポートの真ん中 */
+}
+
+/* 円→（角丸四角形を経由）→正方形 にマスクの形状を変化させるキーフレーム */
+@keyframes reveal-image {
+  from {
+    clip-path: inset(30% round 20%);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+
+  /* スクロールアニメーションの設定----ここまで */

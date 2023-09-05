@@ -115,6 +115,9 @@ export default function Home() {
               <p>本文</p>
               <p>本文</p>
               <p>本文</p>
+              <div className="animationElement">
+                <img src="./image/futa.jpg" alt="サファイア" width="400" height="400" />
+              </div>
               <p>本文</p>
               <p>本文</p>
               <p>本文</p>
@@ -150,6 +153,7 @@ export default function Home() {
               <a href="https://line.me/ja/" className="snsIconAdjustment"><FontAwesomeIcon icon={faLine} /></a>
             </div>
           </footer>
+
 
           <div className="copyright">
             <p>© 2023 futa</p>
