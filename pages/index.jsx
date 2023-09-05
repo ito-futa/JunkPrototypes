@@ -115,7 +115,7 @@ export default function Home() {
               <p>本文</p>
               <p>本文</p>
               <p>本文</p>
-              <div className="animationElement">
+              <div className="fadeAnime">
                 <img src="./image/futa.jpg" alt="サファイア" width="400" height="400" />
               </div>
               <p>本文</p>

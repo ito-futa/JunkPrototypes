@@ -325,9 +325,40 @@ section {
 
 .animationElement {
   /* スクロールアニメーションの設定 */
-  animation: reveal-image linear both; /* アニメーションを指定。イージングはlinear。animation-fill-modeはboth */
+  /* animation: reveal-image linear both; /* アニメーションを指定。イージングはlinear。animation-fill-modeはboth */
+  /* animation-timeline: view();*/
+  /* animation-range: contain 0% contain 50%; /* 開始: 要素がビューポートに完全に入った時、終了: ビューポートの真ん中 */
+  animation: fadeUpAnime;
+  animation-duration:0.5s;
+  opacity:0;
+}
+
+/* fadeAnimeクラスを持つ要素に適用 */
+.fadeAnime {
+  /* アニメーション名はfadeUp、タイプはlinear(一定の速度)、both(アニメーション前後でスタイル適用) */
+  animation: fadeUp linear both;
+  /* ビューポート(スクロール時の画面位置)に基づいたアニメーションのタイムラインを設定 */
   animation-timeline: view();
-  animation-range: contain 0% contain 50%; /* 開始: 要素がビューポートに完全に入った時、終了: ビューポートの真ん中 */
+  /* アニメーションが適用される範囲を指定、要素がビューポートに入ったところから50％(中央)まで */
+  animation-range: contain 0% contain 50%;
+  /* アニメーションが終了後も最後のプロパティを保持 */
+  animation-fill-mode: forwards;
+  /* 初期状態の透明度は0 */
+  opacity: 0;
+}
+
+/* fadeUpという名前のkeyframeアニメーションを定義 */
+@keyframes fadeUp {
+  /* 開始状態 */
+  from {
+    opacity: 0; /* 透明 */
+    transform: translateY(100px); /* Y軸に沿って100px下に移動 */
+  }
+  /* 終了状態 */
+  to {
+    opacity: 1; /* 完全に不透明 */
+    transform: translateY(0); /* 元の位置に戻る */
+  }
 }
 
 /* 円→（角丸四角形を経由）→正方形 にマスクの形状を変化させるキーフレーム */
