@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { AiOutlineTwitter, AiFillInstagram, AiFillFacebook } from "react-icons/ai";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXTwitter, faLine } from '@fortawesome/free-brands-svg-icons';
+import 'animate.css';
 
 export default function Home() {
 
@@ -45,6 +46,29 @@ export default function Home() {
     if (window.innerWidth <= 768) {
       setIsMenuOpen(false);
     }
+  };
+
+  // // // スクロールでアニメーション // // //
+  const useScrollAnimation = () => {
+    useEffect(() => {
+      const handleScroll = () => {
+        const elements = document.querySelectorAll('.jsAnime');
+        elements.forEach((element) => {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            element.classList.add('fadeAnime2');
+          }
+        });
+      };
+
+      // スクロールイベントの登録
+      window.addEventListener('scroll', handleScroll);
+
+      // コンポーネントのアンマウント時にイベントを解除
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
   };
 
   return (
@@ -96,7 +120,7 @@ export default function Home() {
             />
 
             <section>
-              <h2 id="店舗紹介">店舗紹介</h2>
+              <h2 className='animate__animated animate__shakeY' id="店舗紹介">店舗紹介</h2>
               <p>本文</p>
             </section>
             <section>
@@ -120,7 +144,10 @@ export default function Home() {
               </div>
               <p>本文</p>
               <p>本文</p>
-              <p>本文</p>
+              <div className="jsAnime">
+                <img src="./image/futa.jpg" alt="サファイア" width="400" height="400" />
+              </div>
+              <h1 className="animate__animated animate__bounce">An animated element</h1>
               <p>本文</p>
               <p>本文</p>
             </section>

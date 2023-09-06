@@ -325,17 +325,13 @@ section {
 
 .animationElement {
   /* スクロールアニメーションの設定 */
-  /* animation: reveal-image linear both; /* アニメーションを指定。イージングはlinear。animation-fill-modeはboth */
-  /* animation-timeline: view();*/
-  /* animation-range: contain 0% contain 50%; /* 開始: 要素がビューポートに完全に入った時、終了: ビューポートの真ん中 */
-  animation: fadeUpAnime;
-  animation-duration:0.5s;
-  opacity:0;
+  /animation: reveal-image linear both; /* アニメーションを指定。イージングはlinear。animation-fill-modeはboth */
+  /animation-range: contain 0% contain 50%; /* 開始: 要素がビューポートに完全に入った時、終了: ビューポートの真ん中 */
 }
 
-/* fadeAnimeクラスを持つ要素に適用 */
+/* fadeAnimeクラスに適用 */
 .fadeAnime {
-  /* アニメーション名はfadeUp、タイプはlinear(一定の速度)、both(アニメーション前後でスタイル適用) */
+  /* 適用されるアニメーションは下で定義した"fadeUp"、タイプはlinear(一定の速度)、both(アニメーション前後でスタイル適用) */
   animation: fadeUp linear both;
   /* ビューポート(スクロール時の画面位置)に基づいたアニメーションのタイムラインを設定 */
   animation-timeline: view();
@@ -347,17 +343,27 @@ section {
   opacity: 0;
 }
 
+.jsAnime {
+  opacity: 0;
+}
+
+.fadeAnime2 {
+  /* ここにアニメーションのCSSを記述 */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
 /* fadeUpという名前のkeyframeアニメーションを定義 */
 @keyframes fadeUp {
   /* 開始状態 */
   from {
     opacity: 0; /* 透明 */
-    transform: translateY(100px); /* Y軸に沿って100px下に移動 */
+    transform: translateY(100px); /* Y軸に沿って100px下に移動している */
   }
   /* 終了状態 */
   to {
     opacity: 1; /* 完全に不透明 */
-    transform: translateY(0); /* 元の位置に戻る */
+    transform: translateY(0); /* 元の位置に戻る、つまり上がる */
   }
 }
 
