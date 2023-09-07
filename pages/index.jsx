@@ -7,69 +7,11 @@ import { AiOutlineTwitter, AiFillInstagram, AiFillFacebook } from "react-icons/a
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXTwitter, faLine } from '@fortawesome/free-brands-svg-icons';
 import 'animate.css';
+import { useMenuLogic } from './menuLogic';
 
 export default function Home() {
 
-  // メニューの開閉を制御するisMenuOpenをuseStateで設定
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // toggleMenuを実行時にisMenuOpenの状態を切り替える
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
-  // ウインドウの横幅に応じてisMenuOpenを設定
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {  // PCの場合（768px以上）
-        setIsMenuOpen(true); // 初期段階ではメニューを開く
-      } else {  // モバイルの場合
-        setIsMenuOpen(false); // 初期段階ではメニューを閉じる
-      }
-    };
-
-    // 初期ロード時に一回だけチェック
-    handleResize();
-
-    // ウィンドウリサイズ時にもチェック
-    window.addEventListener('resize', handleResize);
-
-    // クリーンアップ
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  // スマホの場合、メニューを閉じる処理
-  const closeMenu = () => {
-    // スマホモードであれば、メニューを閉じる
-    if (window.innerWidth <= 768) {
-      setIsMenuOpen(false);
-    }
-  };
-
-  // // // スクロールでアニメーション // // //
-  const useScrollAnimation = () => {
-    useEffect(() => {
-      const handleScroll = () => {
-        const elements = document.querySelectorAll('.jsAnime');
-        elements.forEach((element) => {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-            element.classList.add('fadeAnime2');
-          }
-        });
-      };
-
-      // スクロールイベントの登録
-      window.addEventListener('scroll', handleScroll);
-
-      // コンポーネントのアンマウント時にイベントを解除
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
-  };
+  const { isMenuOpen, toggleMenu, closeMenu } = useMenuLogic();
 
   return (
     <>
