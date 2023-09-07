@@ -91,6 +91,13 @@ export default function Home() {
               </div>
               <h1 className="animate__animated animate__bounce">An animated element</h1>
               <p>本文</p>
+
+              <div className="background-text-container">
+                <div className="scrolling-text">
+                  This is scrolling text.
+                </div>
+              </div>
+
               <p>本文</p>
             </section>
 
