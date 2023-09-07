@@ -378,3 +378,37 @@ section {
 }
 
   /* スクロールアニメーションの設定----ここまで */
+
+  /* 背景として動くテキストのコンテナ */
+.background-text-container {
+      overflow: hidden; /* オーバーフローを非表示 */
+      position: relative; /* 子要素の位置指定の基準点 */
+      width: 100%; /* コンテナの幅 */
+      height: 50px; /* コンテナの高さ */
+      font-weight:900;
+      font-size: 36px;
+      opacity: 0.2;
+    }
+
+    /* スクロールするテキスト */
+    .scrolling-text {
+      position: absolute; /* 絶対位置 */
+      white-space: nowrap; /* 改行しない */
+      left: 100%; /* 初期位置 */
+      top: 0; /* 上端に設定 */
+      user-select: none; /* テキスト選択不可 */
+      /* アニメーション */
+      /* 10秒かけて右から左にスクロールするアニメーションが無限に繰り返されます */
+      animation: scroll-text 10s linear infinite;
+    }
+
+    /* アニメーション設定 */
+    @keyframes scroll-text {
+      0% {
+        left: 100%;
+      }
+      100% {
+        left: -100%;
+      }
+    }
+  /* 背景として動くテキストのコンテナ----ここまで */
