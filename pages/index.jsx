@@ -75,7 +75,7 @@ export default function Home() {
             </section>
             <section>
               <h2 id="お知らせ">お知らせ</h2>
-              <p>本文</p>
+              <p>本文ぬ</p>
               <p>本文</p>
               <p>本文</p>
               <p>本文</p>
