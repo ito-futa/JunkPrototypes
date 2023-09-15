@@ -60,6 +60,11 @@ export default function Home() {
               objectFit="cover" // 画像のオブジェクトフィット（'fill', 'contain', 'cover', 'none', 'scale-down'）
               layout="responsive"
             />
+            <div className="catchCopy">
+              <p>ここは色々なcssやReactのコードを</p>
+              <p>試して遊んだりする</p>
+              <p>サイトです</p>
+            </div>
 
             <section>
               <h2 className='animate__animated animate__shakeY' id="店舗紹介">店舗紹介</h2>
@@ -77,6 +82,7 @@ export default function Home() {
               <h2 id="お知らせ">お知らせ</h2>
               <p>本文ぬ</p>
               <p>本文</p>
+
               <p>本文</p>
               <p>本文</p>
               <p>本文</p>
@@ -103,6 +109,26 @@ export default function Home() {
 
 
           </main>
+
+          <div className='signage'>
+            <div className='title'>
+              Night<br />Rider
+            </div>
+            <div className='subTitle'>
+              - PUNPEE & BIM
+            </div>
+            <div className='day'>
+              2023/09/15
+            </div>
+            <div className="scroll-container">
+              <div className="scroll-content">
+                <p>繰り返す余生にも</p>
+                <p>振り出しの処世にも</p>
+                <p>首都高速を抜ければ</p>
+                <p>そこは誰も知らぬ場所</p>
+              </div>
+            </div>
+          </div>
 
           {/* フッター */}
           <footer>
