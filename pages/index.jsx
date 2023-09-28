@@ -7,7 +7,7 @@ import { AiOutlineTwitter, AiFillInstagram, AiFillFacebook } from "react-icons/a
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXTwitter, faLine } from '@fortawesome/free-brands-svg-icons';
 import 'animate.css';
-import { useMenuLogic } from './menuLogic';
+import { useMenuLogic } from '../hooks/menuLogic';
 
 export default function Home() {
 
